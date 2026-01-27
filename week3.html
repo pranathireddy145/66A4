@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        fieldset{
+            left: 25%;
+            position: absolute;
+            height: 50%;
+            width: 50%;
+            background-color: burlywood;
+            text-align: center;
+            align-items: center;
+        }
+        legend{
+            border: solid;
+            left: auto;
+            right: auto;
+            align-items: center;
+        }table{
+            align-items: center;
+            border: solid;
+        }
+        
+    </style>
+    <script>
+        function fv(){
+            var un1=document.rf.un.value;
+            var ufn1=document.rf.ufn.value;
+            var pn1=document.rf.pn.value;
+            var dob1=document.rf.dob.value;
+            var pass1=document.rf.pass.value;
+            var cpass1=document.rf.cpass.value;
+            var addr1=document.rf.addr.value;
+            var state1=document.rf.state.value;
+            var pc1=document.rf.pc.value;
+            if(un1.length<3)
+            {
+                alert("3 l");
+                return false;
+            }
+            else if(ufn1.length<3){
+                alert("3 l");
+                return false;
+            }
+            else if(pn1.length!=10)
+            {
+                alert("10 n");
+                return false;
+            }
+            else if(pass1!=cpass1){
+                alert("p&cp m b s");
+                return false;
+            }
+            else if(addr1.length>80){
+                 alert("address less than 80 letters");
+                 return false;
+           }
+           else if(pc1.length!=6)
+                 alert("must be 6 numbers");
+                 return false;
+            else{
+                return true;
+            }
 
+        }
+    </script>
+</head>
+<body><fieldset><legend>REG</legend>
+    <form action="login.html" name="rf" onsubmit="return fv()" >
+        <table>
+            <tr>
+                <td><label>name</label></td>
+                <td><input type="text" name="un" required></td>
+            </tr>
+            <tr>
+                <td><label>fname</label></td>
+                <td><input type="text" name="ufn" required></td>
+            </tr>
+            <tr>
+                <td><label>ph.no</label></td>
+                <td><input type="number" name="pn" required></td>
+            </tr>
+            <tr>
+                <td><label>DOB</label></td>
+                <td><input type="date" name="dob" required></td>
+            </tr>
+            <tr>
+                <td><label>gender</label></td>
+                <td><label>male</label>
+                    <input type="radio" name="g" value="male">
+                    <label>female</label>
+                        <input type="radio" name="g" value="female"></td>
+           </tr>
+           <tr>
+           <td><label>email</label></td>
+               <td><input type="email" name="email" required></td>
+           </tr>
+           <tr>
+                <td><label>password</label></td>
+                <td> <input type="password" name="pass" required></td>
+           </tr>
+           <tr>
+                 <td><label>cpassword</label></td>
+                 <td><input type="password" name="cpass" required></td>
+           </tr>
+           <tr>
+                <td><label> address </label></td>
+                <td><input type="address" name="addr" required></td>
+           </tr>
+           <tr>
+    <td><label>State</label></td>
+    <td>
+        <select name="state" required>
+            <option value="">-- Select State --</option>
+            <option value="AP">Andhra Pradesh</option>
+            <option value="TS">Telangana</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="KA">Karnataka</option>
+            <option value="KL">Kerala</option>
+            <option value="MH">Maharashtra</option>
+            <option value="DL">Delhi</option>
+        </select>
+    </td>
+</tr>
+
+           <tr>
+                <td><label> pincode </label></td>
+                <td><input type="pincode" name="pc" required></td>
+           </tr>
+           <tr>
+                 <td> <input type="submit" value="submit"></td>
+                 <td><input type="reset" name="reset"></td>
+           </tr>
+         </table>
+    </form></fieldset>
+</body>
+</html>
